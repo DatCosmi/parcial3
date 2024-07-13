@@ -3,6 +3,7 @@ import { ProductService } from '../service/product.service';
 import { OnSameUrlNavigation } from '@angular/router';
 import { LoadingController, ModalController } from '@ionic/angular';
 import { ModalEditComponent } from '../tabs/modal-edit/modal-edit.component';
+import { Product } from '../model/product';
 
 @Component({
   selector: 'app-tab1',
@@ -39,7 +40,7 @@ export class Tab1Page implements OnInit {
     }
   }
 
-  async edit(item: any) {
+  async edit(item: Product) {
     const modal = await this.modalCtrl.create({
       component: ModalEditComponent,
       componentProps: {
